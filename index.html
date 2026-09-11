@@ -1235,6 +1235,43 @@
         if(slider) {
             slider.addEventListener('mouseenter', () => clearInterval(slideTimer));
         }
+
+        // Active Menu on Scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"], #mobile-menu a[href^="#"]');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px', // Trigger when section is halfway in viewport
+            threshold: 0
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const currentId = entry.target.getAttribute('id');
+                    
+                    navLinks.forEach(link => {
+                        // Reset all links
+                        link.classList.remove('text-primary');
+                        if (link.closest('#mobile-menu')) {
+                            link.classList.add('text-slate-700');
+                        } else {
+                            link.classList.add('text-slate-600');
+                        }
+                        
+                        // Set active link
+                        if (link.getAttribute('href') === `#${currentId}`) {
+                            link.classList.add('text-primary');
+                            link.classList.remove('text-slate-700', 'text-slate-600');
+                        }
+                    });
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        sections.forEach(sec => observer.observe(sec));
     </script>
 </body>
 </html>
