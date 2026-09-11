@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Kramat Jaya Cipta Perdana | Developer Properti Terpercaya Bandung Selatan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#15803d',     // Hijau Tua Elegan
+                        primaryDark: '#0f5b2b',
+                        secondary: '#d97706',   // Aksen Emas / Amber
+                        secondaryHover: '#b45309',
+                        darkBg: '#0f172a',
+                        lightBg: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Marquee Animation */
+        .marquee-container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+        .marquee-content {
+            display: flex;
+            animation: marquee 20s linear infinite;
+        }
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        /* Hide scrollbar for testimonials */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-lightBg text-slate-800 antialiased">
+
+    <!-- TOP BAR INFO -->
+    <div class="bg-primaryDark text-emerald-100 text-xs py-2 px-4 border-b border-emerald-800 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-location-dot mr-2 text-secondary"></i>Jl. Rancamanyar - Bojongkoneng RT 04/12, Kab. Bandung</span>
+                <span><i class="fa-solid fa-phone mr-2 text-secondary"></i>0857-1144-2272</span>
+                <span><i class="fa-solid fa-envelope mr-2 text-secondary"></i>gpa_primacahya@yahoo.com</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="bg-emerald-800/80 px-2.5 py-0.5 rounded text-amber-300 font-semibold flex items-center gap-1">
+                    <i class="fa-solid fa-award"></i> Top BTN Most Valuable Developer
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <!-- Logo Footer Lebih Besar -->
+                        <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center shrink-0">
+                            <img src="logo.png" alt="Logo PT Kramat Jaya Cipta Perdana" class="h-14 sm:h-16 w-auto object-contain">
+                        </div>
+                        
+                        <!-- Teks Nama PT dengan Warna Menarik -->
+                        <div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="#beranda" class="hover:text-primary transition-colors">Beranda</a>
+                    <a href="#proyek" class="hover:text-primary transition-colors">Proyek & Unit</a>
+                    <a href="#tentang" class="hover:text-primary transition-colors">Tentang Kami</a>
+                    <a href="#simulasi-kpr" class="hover:text-primary transition-colors">Simulasi KPR</a>
+                    <a href="#lokasi" class="hover:text-primary transition-colors">Lokasi & Kontak</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:flex items-center">
+                    <a href="https://wa.me/6285711442272?text=Halo%20Marketing%20PT%20Kramat%20Jaya%20Cipta%20Perdana,%20saya%20tertarik%20dengan%20informasi%20proyek%20perumahan." target="_blank" class="bg-primary hover:bg-primaryDark text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg shadow-emerald-700/20 hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Hubungi Marketing</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-3 shadow-xl">
+            <a href="#beranda" class="block py-2 text-slate-700 font-semibold hover:text-primary">Beranda</a>
+            <a href="#proyek" class="block py-2 text-slate-700 font-semibold hover:text-primary">Proyek & Unit</a>
+            <a href="#tentang" class="block py-2 text-slate-700 font-semibold hover:text-primary">Tentang Kami</a>
+            <a href="#simulasi-kpr" class="block py-2 text-slate-700 font-semibold hover:text-primary">Simulasi KPR</a>
+            <a href="#lokasi" class="block py-2 text-slate-700 font-semibold hover:text-primary">Lokasi & Kontak</a>
+            <a href="https://wa.me/6285711442272" class="w-full text-center bg-primary text-white py-3 rounded-lg font-semibold block mt-4">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Hubungi Marketing
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative bg-gradient-to-r from-emerald-950 via-emerald-900 to-slate-900 text-white py-20 lg:py-28 overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-800/80 border border-emerald-500/30 text-amber-300 text-xs font-semibold">
+                        <i class="fa-solid fa-trophy"></i> Top BTN Most Valuable Developer Awardee
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Wujudkan Hunian Nyaman & Bernilai Investasi Tinggi di <span class="text-amber-400">Bandung Selatan</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+                        PT Kramat Jaya Cipta Perdana menghadirkan kawasan hunian strategis, asri, dan terintegrasi di wilayah Rancamanyar dan Pameungpeuk dengan legalitas terjamin dan proses KPR mudah.
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap gap-4">
+                        <a href="#proyek" class="bg-secondary hover:bg-secondaryHover text-white px-7 py-3.5 rounded-xl font-bold shadow-lg shadow-amber-900/30 hover:scale-[1.02] transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-house"></i> Lihat Pilihan Unit
+                        </a>
+                        <a href="#simulasi-kpr" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-xl font-bold backdrop-blur-sm transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-calculator"></i> Hitung KPR
+                        </a>
+                    </div>
+
+                    <!-- Highlights Stat -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-emerald-800/60">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-amber-400">1000+</div>
+                            <div class="text-xs text-slate-300 font-medium mt-0.5">Unit Terbangun</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-300">100%</div>
+                            <div class="text-xs text-slate-300 font-medium mt-0.5">Legalitas Aman & Jelas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-amber-400">Top 1</div>
+                            <div class="text-xs text-slate-300 font-medium mt-0.5">Partner Bank BTN</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Card / Featured Housing -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/20 shadow-2xl">
+                        <div class="relative rounded-xl overflow-hidden group">
+                            <img src="assets/hero_house.png" alt="Grand PKJ Rancamanyar" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-md shadow-md uppercase tracking-wider">
+                                Proyek Unggulan
+                            </div>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 text-white">
+                                <h3 class="text-xl font-bold">Grand PKJ Rancamanyar</h3>
+                                <p class="text-xs text-slate-200 mt-1"><i class="fa-solid fa-map-pin mr-1 text-amber-400"></i> Rancamulya, Pameungpeuk - Bandung</p>
+                                <div class="mt-3 flex justify-between items-center">
+                                    <span class="text-sm font-semibold text-amber-300">Mulai Rp 300 Jutaan</span>
+                                    <span class="text-xs bg-emerald-600 px-2.5 py-1 rounded font-medium">Ready Stock & Indent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN / VALUE PROPOSITION -->
+    <section class="py-16 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-primary font-bold text-sm uppercase tracking-wider">Mengapa Memilih Kami</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Komitmen Kualitas & Kenyamanan Hidup Keluarga Anda</h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Developer Berpengalaman</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Telah dipercaya ribuan keluarga dan diakui institusi perbankan terkemuka sebagai pengembang berpengaruh di Bandung.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Lokasi Strategis</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Akses cepat ke fasilitas umum, sekolah, pasar, pusat perbelanjaan, dan jalur utama Bandung Selatan.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-file-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Legalitas Aman & Jelas</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Sertifikat, IMB/PBG, dan perizinan lengkap sehingga transaksi Anda terjamin 100% aman.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">KPR Dibantu Tuntas</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Kerjasama erat dengan Bank BTN dan bank lainnya untuk kemudahan proses pengajuan hingga akad kredit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SITEPLAN & MASTERPLAN KAWASAN -->
+    <section id="siteplan" class="py-16 bg-slate-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-primary font-bold text-sm uppercase tracking-wider">Masterplan Kawasan</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Denah Posisi Rumah & Fasilitas</h2>
+                <p class="text-slate-500 text-sm mt-3">Lingkungan perumahan yang ditata dengan apik, dilengkapi fasilitas jalan lingkungan yang lebar, area hijau, dan sistem keamanan yang baik demi kenyamanan hunian Anda.</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl p-4 sm:p-8 shadow-xl border border-slate-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-40 h-40 bg-secondary/5 rounded-full blur-3xl"></div>
+                
+                <div class="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 group">
+                    <img src="assets/siteplan_map.png" alt="Siteplan Perumahan" class="w-full h-auto object-cover max-h-[500px] group-hover:scale-[1.02] transition-transform duration-700">
+                    <div class="absolute inset-0 bg-slate-900/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="bg-white text-slate-800 font-bold px-6 py-3 rounded-full shadow-lg">
+                            <i class="fa-solid fa-magnifying-glass-plus mr-2 text-primary"></i> Ilustrasi Denah Kawasan
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                    <div class="flex items-center gap-3 bg-emerald-50 p-3 rounded-xl border border-emerald-100">
+                        <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <div class="text-xs font-semibold text-slate-700">Row Jalan Lebar (6-8m)</div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-emerald-50 p-3 rounded-xl border border-emerald-100">
+                        <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-tree"></i>
+                        </div>
+                        <div class="text-xs font-semibold text-slate-700">Ruang Terbuka Hijau</div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-emerald-50 p-3 rounded-xl border border-emerald-100">
+                        <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-mosque"></i>
+                        </div>
+                        <div class="text-xs font-semibold text-slate-700">Fasilitas Ibadah</div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-emerald-50 p-3 rounded-xl border border-emerald-100">
+                        <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="text-xs font-semibold text-slate-700">Keamanan 24 Jam & One Gate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYEK & TIPE RUMAH (DETAIL UNIT) -->
+    <section id="proyek" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+                <div>
+                    <span class="text-primary font-bold text-sm uppercase tracking-wider">Katalog Properti & Spesifikasi</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Detail Pilihan Unit Hunian</h2>
+                    <p class="text-slate-500 text-sm mt-1">Pelajari spesifikasi material unggulan dan denah tata ruang fungsional untuk setiap tipe rumah kami.</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <span class="inline-flex items-center text-sm font-semibold text-slate-600 bg-slate-50 px-4 py-2 rounded-lg border shadow-sm">
+                        <i class="fa-solid fa-circle-check text-primary mr-2"></i> Pilihan Ready Stock & Indent
+                    </span>
+                </div>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Unit Tipe 36 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 transition-all duration-300">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <!-- Galeri / Gambar -->
+                        <div class="relative bg-slate-50 p-6 lg:p-8 flex flex-col gap-4">
+                            <div class="relative rounded-2xl overflow-hidden shadow-md group">
+                                <img src="assets/fasad_tipe_36.png" alt="Fasad Tipe 36" class="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute top-4 left-4 bg-primary text-white text-sm font-bold px-4 py-1.5 rounded-lg shadow-lg">Fasad Depan</div>
+                            </div>
+                            <div class="relative rounded-2xl overflow-hidden shadow-md group bg-white border border-slate-200">
+                                <img src="assets/denah_tipe_36.png" alt="Denah Tipe 36" class="w-full h-48 md:h-64 object-cover opacity-80 mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute top-4 left-4 bg-slate-800 text-white text-sm font-bold px-4 py-1.5 rounded-lg shadow-lg">Denah Ruangan</div>
+                            </div>
+                        </div>
+
+                        <!-- Info & Spesifikasi -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-center">
+                            <div class="mb-6">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-primary text-xs font-bold mb-3 uppercase tracking-wider">
+                                    Grand PKJ Rancamanyar
+                                </div>
+                                <h3 class="text-3xl font-extrabold text-slate-900">Tipe 36 / 60</h3>
+                                <p class="text-xl font-bold text-amber-500 mt-2">Mulai Rp 325 Jutaan</p>
+                                <p class="text-slate-500 text-sm mt-3 leading-relaxed">Hunian berkonsep minimalis modern yang sangat cocok untuk keluarga muda. Menawarkan efisiensi tata ruang optimal, memaksimalkan pencahayaan dan sirkulasi udara alami.</p>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-3 mb-8">
+                                <div class="bg-slate-50 rounded-xl p-3 text-center border border-slate-100">
+                                    <i class="fa-solid fa-bed text-primary text-xl mb-2 block"></i>
+                                    <span class="text-xs font-bold text-slate-700 block">2 Kamar Tidur</span>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-3 text-center border border-slate-100">
+                                    <i class="fa-solid fa-bath text-primary text-xl mb-2 block"></i>
+                                    <span class="text-xs font-bold text-slate-700 block">1 Kamar Mandi</span>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-3 text-center border border-slate-100">
+                                    <i class="fa-solid fa-car text-primary text-xl mb-2 block"></i>
+                                    <span class="text-xs font-bold text-slate-700 block">1 Carport</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 border-b border-slate-100 pb-2">Spesifikasi Material</h4>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 text-sm text-slate-600">
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Pondasi:</strong> Batu Kali / Tapak Beton</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Struktur:</strong> Beton Bertulang</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Dinding:</strong> Hebel diplester, aci, cat</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Lantai:</strong> Granit Tile 60x60 cm</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Kusen:</strong> Alumunium Powder Coating</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Plafon:</strong> Gypsum Rangka Hollow</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Atap:</strong> Rangka Baja Ringan, Genteng Beton</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Fasilitas:</strong> Listrik 1300W, Pompa Air</span></li>
+                                </ul>
+                            </div>
+
+                            <a href="https://wa.me/6285711442272?text=Halo,%20saya%20tertarik%20dengan%20info%20Unit%20Tipe%2036" class="inline-flex justify-center items-center gap-2 bg-primary hover:bg-primaryDark text-white px-6 py-3.5 rounded-xl font-bold shadow-lg shadow-emerald-700/20 hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                Info Lengkap & Booking
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Tipe 45 (Best Seller) -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(217,119,6,0.1)] border-2 border-secondary transition-all duration-300 relative">
+                    <div class="absolute top-0 right-0 bg-secondary text-white text-xs font-extrabold uppercase px-6 py-2 rounded-bl-2xl z-10 shadow-md">
+                        <i class="fa-solid fa-star text-amber-200 mr-1"></i> Tipe Terlaris
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <!-- Galeri / Gambar -->
+                        <div class="relative bg-amber-50/50 p-6 lg:p-8 flex flex-col gap-4">
+                            <div class="relative rounded-2xl overflow-hidden shadow-md group">
+                                <img src="assets/fasad_tipe_45.png" alt="Fasad Tipe 45" class="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute top-4 left-4 bg-primary text-white text-sm font-bold px-4 py-1.5 rounded-lg shadow-lg">Fasad Depan</div>
+                            </div>
+                            <div class="relative rounded-2xl overflow-hidden shadow-md group bg-white border border-slate-200">
+                                <img src="assets/denah_tipe_45.png" alt="Denah Tipe 45" class="w-full h-48 md:h-64 object-cover opacity-80 mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute top-4 left-4 bg-slate-800 text-white text-sm font-bold px-4 py-1.5 rounded-lg shadow-lg">Denah Ruangan</div>
+                            </div>
+                        </div>
+
+                        <!-- Info & Spesifikasi -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-center">
+                            <div class="mb-6">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-secondary text-xs font-bold mb-3 uppercase tracking-wider">
+                                    Grand PKJ Rancamanyar
+                                </div>
+                                <h3 class="text-3xl font-extrabold text-slate-900">Tipe 45 / 72</h3>
+                                <p class="text-xl font-bold text-primary mt-2">Mulai Rp 415 Jutaan</p>
+                                <p class="text-slate-500 text-sm mt-3 leading-relaxed">Pilihan tepat untuk kenyamanan ekstra. Ruang keluarga yang lebih lega dengan taman belakang (inner courtyard) untuk pencahayaan rumah yang sejuk dan terang.</p>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-3 mb-8">
+                                <div class="bg-amber-50 rounded-xl p-3 text-center border border-amber-100">
+                                    <i class="fa-solid fa-bed text-secondary text-xl mb-2 block"></i>
+                                    <span class="text-xs font-bold text-slate-700 block">2 Kamar Tidur Utama</span>
+                                </div>
+                                <div class="bg-amber-50 rounded-xl p-3 text-center border border-amber-100">
+                                    <i class="fa-solid fa-bath text-secondary text-xl mb-2 block"></i>
+                                    <span class="text-xs font-bold text-slate-700 block">1 Kamar Mandi +</span>
+                                </div>
+                                <div class="bg-amber-50 rounded-xl p-3 text-center border border-amber-100">
+                                    <i class="fa-solid fa-car text-secondary text-xl mb-2 block"></i>
+                                    <span class="text-xs font-bold text-slate-700 block">1 Carport Lebar</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 border-b border-slate-100 pb-2">Spesifikasi Material Premium</h4>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 text-sm text-slate-600">
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-1 text-[10px]"></i> <span><strong>Pondasi:</strong> Batu Kali / Tapak Beton</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-1 text-[10px]"></i> <span><strong>Struktur:</strong> Beton Bertulang Besi Standar SNI</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-1 text-[10px]"></i> <span><strong>Dinding:</strong> Hebel diplester, aci, cat (Nippon/Setara)</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-1 text-[10px]"></i> <span><strong>Lantai:</strong> Granit Tile Premium 60x60 cm</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-1 text-[10px]"></i> <span><strong>Kusen:</strong> Alumunium Putih/Hitam</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-1 text-[10px]"></i> <span><strong>Plafon:</strong> Gypsum Rangka Hollow (Tinggi)</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-1 text-[10px]"></i> <span><strong>Atap:</strong> Rangka Baja Ringan, Genteng Beton Flat</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-1 text-[10px]"></i> <span><strong>Sanitari:</strong> Kloset Duduk (Toto/Setara), Shower</span></li>
+                                </ul>
+                            </div>
+
+                            <a href="https://wa.me/6285711442272?text=Halo,%20saya%20tertarik%20dengan%20info%20Unit%20Tipe%2045" class="inline-flex justify-center items-center gap-2 bg-secondary hover:bg-secondaryHover text-white px-6 py-3.5 rounded-xl font-bold shadow-lg shadow-amber-700/20 hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                Info Lengkap & Booking
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Tipe 60 (2 Lantai) -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 transition-all duration-300">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <!-- Galeri / Gambar -->
+                        <div class="relative bg-slate-50 p-6 lg:p-8 flex flex-col gap-4">
+                            <div class="relative rounded-2xl overflow-hidden shadow-md group">
+                                <img src="assets/fasad_tipe_60.png" alt="Fasad Tipe 60" class="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute top-4 left-4 bg-primary text-white text-sm font-bold px-4 py-1.5 rounded-lg shadow-lg">Fasad Depan 2 Lantai</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="relative rounded-2xl overflow-hidden shadow-md group bg-white border border-slate-200">
+                                    <img src="assets/denah_tipe_60_1.png" alt="Denah Lantai 1" class="w-full h-32 md:h-40 object-cover opacity-80 mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute top-2 left-2 bg-slate-800 text-white text-[10px] font-bold px-2 py-1 rounded shadow-md">Denah Lantai 1</div>
+                                </div>
+                                <div class="relative rounded-2xl overflow-hidden shadow-md group bg-white border border-slate-200">
+                                    <img src="assets/denah_tipe_60_2.png" alt="Denah Lantai 2" class="w-full h-32 md:h-40 object-cover opacity-80 mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute top-2 left-2 bg-slate-800 text-white text-[10px] font-bold px-2 py-1 rounded shadow-md">Denah Lantai 2</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info & Spesifikasi -->
+                        <div class="p-6 lg:p-10 flex flex-col justify-center">
+                            <div class="mb-6">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-primary text-xs font-bold mb-3 uppercase tracking-wider">
+                                    Kawasan Pameungpeuk
+                                </div>
+                                <h3 class="text-3xl font-extrabold text-slate-900">Tipe 60 / 84</h3>
+                                <p class="text-xl font-bold text-amber-500 mt-2">Mulai Rp 580 Jutaan</p>
+                                <p class="text-slate-500 text-sm mt-3 leading-relaxed">Hunian eksklusif 2 lantai berdesain arsitektur elegan. Mengutamakan privasi dan prestise untuk keluarga Anda, ruang fungsional tanpa batas dengan tata ruang modern.</p>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-3 mb-8">
+                                <div class="bg-slate-50 rounded-xl p-3 text-center border border-slate-100">
+                                    <i class="fa-solid fa-bed text-primary text-xl mb-2 block"></i>
+                                    <span class="text-xs font-bold text-slate-700 block">3 Kamar Tidur</span>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-3 text-center border border-slate-100">
+                                    <i class="fa-solid fa-bath text-primary text-xl mb-2 block"></i>
+                                    <span class="text-xs font-bold text-slate-700 block">2 Kamar Mandi</span>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-3 text-center border border-slate-100">
+                                    <i class="fa-solid fa-car text-primary text-xl mb-2 block"></i>
+                                    <span class="text-xs font-bold text-slate-700 block">2 Carport Lebar</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 border-b border-slate-100 pb-2">Spesifikasi Material Eksklusif</h4>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 text-sm text-slate-600">
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Pondasi:</strong> Tapak Beton & Strauss Pile</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Struktur:</strong> Beton Bertulang K-225</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Dinding:</strong> Bata Merah/Hebel, Plester Aci</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Lantai:</strong> Granit Tile 60x60, KM Full Keramik</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Kusen:</strong> Alumunium, Pintu Panel Solid</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Plafon:</strong> Gypsum Rangka Hollow Galvanis</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Atap:</strong> Baja Ringan, Genteng Beton Flat</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-1 text-[10px]"></i> <span><strong>Utilitas:</strong> Listrik 2200W, Jetpump Terpasang</span></li>
+                                </ul>
+                            </div>
+
+                            <a href="https://wa.me/6285711442272?text=Halo,%20saya%20tertarik%20dengan%20info%20Unit%20Tipe%2060%202%20Lantai" class="inline-flex justify-center items-center gap-2 bg-primary hover:bg-primaryDark text-white px-6 py-3.5 rounded-xl font-bold shadow-lg shadow-emerald-700/20 hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                Info Lengkap & Booking
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG PERUSAHAAN & LEADERSHIP -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-primary font-bold text-sm uppercase tracking-wider">Tentang Developer</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                        Dedikasi Membangun Kawasan Hunian Berkualitas di Bandung
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        <strong>PT Kramat Jaya Cipta Perdana</strong> di bawah kepemimpinan <strong>H. Iwan Komara</strong> telah mendedikasikan pengalaman bertahun-tahun dalam mengembangkan kawasan pemukiman yang tertata rapi, ramah lingkungan, dan bernilai ekonomis tinggi bagi masyarakat Jawa Barat khususnya Kabupaten Bandung.
+                    </p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Penerima Top BTN Most Valuable Developers</h4>
+                                <p class="text-xs text-slate-500">Penghargaan resmi dari Bank BTN atas kontribusi dan performa penyediaan perumahan terbaik.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Layanan Purna Jual & Transparansi</h4>
+                                <p class="text-xs text-slate-500">Memberikan pendampingan menyeluruh dari survei lokasi, pengurusan berkas, hingga serah terima kunci.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="bg-primary text-white p-6 rounded-2xl shadow-lg">
+                            <i class="fa-solid fa-shield-halved text-3xl text-amber-300 mb-3"></i>
+                            <h4 class="font-bold text-lg">Terpercaya</h4>
+                            <p class="text-xs text-emerald-100 mt-1">Komitmen integritas dalam setiap proyek pembangunan.</p>
+                        </div>
+                        <div class="bg-slate-100 p-6 rounded-2xl">
+                            <i class="fa-solid fa-users text-3xl text-primary mb-3"></i>
+                            <h4 class="font-bold text-lg text-slate-900">Komunitas Nyaman</h4>
+                            <p class="text-xs text-slate-600 mt-1">Lingkungan aman, guyub, dan ramah anak.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="bg-secondary text-white p-6 rounded-2xl shadow-lg">
+                            <i class="fa-solid fa-medal text-3xl text-white mb-3"></i>
+                            <h4 class="font-bold text-lg">Bank BTN Partner</h4>
+                            <p class="text-xs text-amber-100 mt-1">Proses KPR cepat dan bunga kompetitif.</p>
+                        </div>
+                        <div class="bg-slate-900 text-white p-6 rounded-2xl">
+                            <i class="fa-solid fa-road text-3xl text-secondary mb-3"></i>
+                            <h4 class="font-bold text-lg">Infrastruktur Baik</h4>
+                            <p class="text-xs text-slate-300 mt-1">Jalan lingkungan lebar dan drainase rapi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNER BISNIS -->
+    <section id="partner" class="py-16 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-primary font-bold text-sm uppercase tracking-wider">Mitra & Partner</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Partner Bisnis Kami</h2>
+                <p class="text-slate-500 text-sm mt-3">Didukung oleh berbagai instansi dan lembaga keuangan terpercaya untuk mewujudkan hunian impian Anda.</p>
+            </div>
+            
+            <div class="marquee-container py-4 opacity-80 hover:opacity-100 transition-opacity">
+                <div class="marquee-content gap-8 min-w-max">
+                    <!-- SET 1 (10 Partners) -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/btn.jpg" alt="Bank BTN" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/bjb.png" alt="Bank BJB" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/bsi.webp" alt="BSI" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="https://img.icons8.com/color/96/agreement.png" alt="Notaris" class="h-12 w-auto object-contain mb-1 opacity-80">
+                        <span class="font-bold text-slate-700 text-xs">Notaris & PPAT</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/mandiri.jpg" alt="Bank Mandiri" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/bri.jpg" alt="Bank BRI" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/bca.png" alt="Bank BCA" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/bni.jpg" alt="Bank BNI" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/btnsyariah.jpg" alt="BTN Syariah" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/mega.png" alt="Bank Mega" class="h-12 w-auto object-contain">
+                    </div>
+                    <!-- SET 2 (Untuk Looping) -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/btn.jpg" alt="Bank BTN" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/bjb.png" alt="Bank BJB" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/bsi.webp" alt="BSI" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="https://img.icons8.com/color/96/agreement.png" alt="Notaris" class="h-12 w-auto object-contain mb-1 opacity-80">
+                        <span class="font-bold text-slate-700 text-xs">Notaris & PPAT</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/mandiri.jpg" alt="Bank Mandiri" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/bri.jpg" alt="Bank BRI" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/bca.png" alt="Bank BCA" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/bni.jpg" alt="Bank BNI" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/btnsyariah.jpg" alt="BTN Syariah" class="h-12 w-auto object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center w-48 h-32 grayscale hover:grayscale-0 transition-all duration-300 shrink-0">
+                        <img src="assets/mega.png" alt="Bank Mega" class="h-12 w-auto object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI KLIEN -->
+    <section id="testimoni" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-primary font-bold text-sm uppercase tracking-wider">Apa Kata Mereka</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Testimoni Klien Kami</h2>
+                <p class="text-slate-500 text-sm mt-3">Ribuan keluarga telah mempercayakan hunian impian mereka kepada PT Kramat Jaya Cipta Perdana.</p>
+            </div>
+            
+            <!-- Marquee Container -->
+            <div class="marquee-container py-4 opacity-95 hover:opacity-100 transition-opacity" id="testimonial-slider">
+                <div class="marquee-content gap-8 min-w-max" style="animation-duration: 40s;">
+                    <!-- SET 1 -->
+                    <!-- Testimoni 1 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Proses KPR sangat dibantu sampai akad. Alhamdulillah sekarang sudah bisa menempati rumah di Grand PKJ Rancamanyar. Lingkungannya nyaman dan bebas banjir."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Bapak Budi" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bapak Budi</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 45, Rancamanyar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 2 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Kualitas bangunannya sangat rapi, tidak mengecewakan. Developer juga sangat amanah, legalitas jelas. Terima kasih PT Kramat Jaya Cipta Perdana!"</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ibu Siti Nurhaliza" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Ibu Siti Nurhaliza</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 36, Pameungpeuk</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 3 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Awalnya ragu beli rumah indent, tapi ternyata progress pembangunannya cepat dan transparan. Sekarang rumah dua lantai idaman kami sudah jadi. Keren banget!"</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Keluarga Andi" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Keluarga Andi & Rina</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 60, Pameungpeuk</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 4 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Akses jalannya lebar, satpam 24 jam sangat bisa diandalkan. Udara di sini masih segar, pokoknya mantap banget buat keluarga besar kami."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Bapak Hendra" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bapak Hendra</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 45, Rancamanyar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 5 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Lokasinya sangat strategis, dekat dengan fasilitas publik. Saya tidak menyesal berinvestasi di perumahan ini. Nilai jualnya pasti naik pesat!"</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Bapak Surya" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bapak Surya</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 36, Pameungpeuk</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 6 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Desain rumahnya sangat modern dan tidak kaku. Cocok banget untuk keluarga milenial seperti saya. Pelayanannya juga super ramah."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/31.jpg" alt="Ibu Fitri" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Ibu Fitri</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 60, Rancamanyar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 7 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Beli rumah di sini prosesnya gak ribet. Semua dibantu tim marketing yang kompeten. Sangat direkomendasikan untuk yang cari rumah pertama."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Bapak Anton" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bapak Anton</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 45, Pameungpeuk</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 8 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Fasilitas ruang terbuka hijaunya bikin betah anak-anak main di luar. Udara sore hari juga enak banget buat sepedahan santai."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Ibu Maya" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Ibu Maya</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 36, Rancamanyar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 9 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"DP-nya terjangkau dan cicilannya ringan. Alhamdulillah, dari ngontrak akhirnya bisa punya rumah yang layak dan luas buat keluarga."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="Keluarga Ridwan" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Keluarga Ridwan</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 60, Rancamanyar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 10 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Spesifikasi bangunan sesuai dengan brosur, granit dan baja ringan semuanya berkualitas. Pokoknya puas deh beli rumah di sini."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Bapak Dedi" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bapak Dedi</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 45, Pameungpeuk</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SET 2 (Looping) -->
+                    <!-- Testimoni 1 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Proses KPR sangat dibantu sampai akad. Alhamdulillah sekarang sudah bisa menempati rumah di Grand PKJ Rancamanyar. Lingkungannya nyaman dan bebas banjir."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Bapak Budi" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bapak Budi</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 45, Rancamanyar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 2 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Kualitas bangunannya sangat rapi, tidak mengecewakan. Developer juga sangat amanah, legalitas jelas. Terima kasih PT Kramat Jaya Cipta Perdana!"</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ibu Siti Nurhaliza" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Ibu Siti Nurhaliza</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 36, Pameungpeuk</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 3 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Awalnya ragu beli rumah indent, tapi ternyata progress pembangunannya cepat dan transparan. Sekarang rumah dua lantai idaman kami sudah jadi. Keren banget!"</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Keluarga Andi" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Keluarga Andi & Rina</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 60, Pameungpeuk</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 4 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Akses jalannya lebar, satpam 24 jam sangat bisa diandalkan. Udara di sini masih segar, pokoknya mantap banget buat keluarga besar kami."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Bapak Hendra" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bapak Hendra</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 45, Rancamanyar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 5 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Lokasinya sangat strategis, dekat dengan fasilitas publik. Saya tidak menyesal berinvestasi di perumahan ini. Nilai jualnya pasti naik pesat!"</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Bapak Surya" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bapak Surya</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 36, Pameungpeuk</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 6 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Desain rumahnya sangat modern dan tidak kaku. Cocok banget untuk keluarga milenial seperti saya. Pelayanannya juga super ramah."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/31.jpg" alt="Ibu Fitri" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Ibu Fitri</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 60, Rancamanyar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 7 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Beli rumah di sini prosesnya gak ribet. Semua dibantu tim marketing yang kompeten. Sangat direkomendasikan untuk yang cari rumah pertama."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Bapak Anton" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bapak Anton</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 45, Pameungpeuk</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 8 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Fasilitas ruang terbuka hijaunya bikin betah anak-anak main di luar. Udara sore hari juga enak banget buat sepedahan santai."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Ibu Maya" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Ibu Maya</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 36, Rancamanyar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 9 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"DP-nya terjangkau dan cicilannya ringan. Alhamdulillah, dari ngontrak akhirnya bisa punya rumah yang layak dan luas buat keluarga."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="Keluarga Ridwan" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Keluarga Ridwan</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 60, Rancamanyar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimoni 10 -->
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-3xl border border-slate-100 relative hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-quote-right text-4xl text-emerald-100 absolute top-6 right-6"></i>
+                        <div class="flex text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">"Spesifikasi bangunan sesuai dengan brosur, granit dan baja ringan semuanya berkualitas. Pokoknya puas deh beli rumah di sini."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Bapak Dedi" class="w-12 h-12 rounded-full object-cover shadow-sm border-2 border-white">
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bapak Dedi</h4>
+                                <p class="text-xs text-slate-500">Pemilik Tipe 45, Pameungpeuk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMULASI KPR INTERAKTIF -->
+    <section id="simulasi-kpr" class="py-20 bg-emerald-950 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-amber-400 font-bold text-sm uppercase tracking-wider">Kalkulator Properti</span>
+                <h2 class="text-3xl font-extrabold mt-2">Simulasi Angsuran KPR</h2>
+                <p class="text-slate-300 text-sm mt-1">Hitung perkiraan angsuran bulanan rumah impian Anda secara langsung</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white text-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <!-- Form Input -->
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Harga Properti (Rp)</label>
+                            <input type="number" id="propPrice" value="350000000" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-primary focus:outline-none font-semibold text-slate-800">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Uang Muka / DP (%)</label>
+                            <select id="dpPercent" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-primary focus:outline-none font-semibold text-slate-800">
+                                <option value="10">10%</option>
+                                <option value="15">15%</option>
+                                <option value="20" selected>20%</option>
+                                <option value="30">30%</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Jangka Waktu</label>
+                                <select id="loanTenor" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-primary focus:outline-none font-semibold text-slate-800">
+                                    <option value="10">10 Tahun</option>
+                                    <option value="15">15 Tahun</option>
+                                    <option value="20" selected>20 Tahun</option>
+                                    <option value="25">25 Tahun</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Suku Bunga (%)</label>
+                                <input type="number" id="interestRate" value="6.5" step="0.1" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-primary focus:outline-none font-semibold text-slate-800">
+                            </div>
+                        </div>
+
+                        <button onclick="calculateKPR()" class="w-full bg-primary hover:bg-primaryDark text-white py-3 rounded-xl font-bold transition shadow-md">
+                            Hitung Sekarang
+                        </button>
+                    </div>
+
+                    <!-- Hasil Perhitungan -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between h-full">
+                        <div>
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Estimasi Cicilan Bulanan</div>
+                            <div class="text-3xl sm:text-4xl font-black text-primary mt-2" id="monthlyInstallment">
+                                Rp 2.088.000 <span class="text-xs font-normal text-slate-500">/bulan</span>
+                            </div>
+                            
+                            <div class="mt-6 space-y-3 text-xs border-t border-slate-200 pt-4 text-slate-600">
+                                <div class="flex justify-between">
+                                    <span>Plafon Pinjaman:</span>
+                                    <span class="font-bold text-slate-900" id="loanAmountText">Rp 280.000.000</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Minimal Uang Muka (DP):</span>
+                                    <span class="font-bold text-slate-900" id="dpAmountText">Rp 70.000.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <p class="text-[11px] text-slate-400 italic mb-3">*Simulasi ini hanyalah estimasi perhitungan. Nilai riil mengikuti syarat & ketentuan bank rekanan.</p>
+                            <a href="https://wa.me/6285711442272?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20KPR%20dan%20syarat%20pengajuannya" class="block text-center w-full bg-secondary hover:bg-secondaryHover text-white py-2.5 rounded-lg text-xs font-bold transition">
+                                Konsultasi KPR Gratis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOKASI, PETA & KONTAK -->
+    <section id="lokasi" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Kontak Detail -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-primary font-bold text-sm uppercase tracking-wider">Kantor Pemasaran</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Kunjungi Kantor Kami</h2>
+                        <p class="text-slate-600 text-sm mt-2">Marketing gallery kami siap melayani dan memberikan panduan survei lokasi setiap hari kerja.</p>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-slate-700">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                            <i class="fa-solid fa-location-dot text-xl text-primary mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Alamat Kantor</h4>
+                                <p class="text-slate-600 text-xs mt-1">Jl. Rancamanyar - Bojongkoneng RT 04/12, Kabupaten Bandung, Jawa Barat</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                            <i class="fa-solid fa-phone text-xl text-primary mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Telepon / WhatsApp</h4>
+                                <p class="text-slate-600 text-xs mt-1">0857-1144-2272</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                            <i class="fa-solid fa-envelope text-xl text-primary mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Email</h4>
+                                <p class="text-slate-600 text-xs mt-1">gpa_primacahya@yahoo.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="lg:col-span-7 rounded-2xl overflow-hidden shadow-lg border border-slate-200 h-[380px] relative">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15841.40871959779!2d107.59254825!3d-6.99967675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e950bcbe5735%3A0xe54cb8da07c2a7bc!2sRancamanyar%2C%20Baleendah%2C%20Bandung%20Regency%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-slate-800">
+                <div class="md:col-span-2 space-y-3">
+                    <div class="flex items-center space-x-2 text-white font-bold text-base">
+                        <i class="fa-solid fa-building text-primary"></i>
+                        <span>PT Kramat Jaya Cipta Perdana</span>
+                    </div>
+                    <p class="text-slate-400 max-w-md leading-relaxed">
+                        Pengembang properti terpercaya yang berdedikasi membangun perumahan asri, terjangkau, dan berkualitas di kawasan strategis Kabupaten Bandung.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold text-sm mb-3">Tautan Cepat</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#beranda" class="hover:text-primary transition">Beranda</a></li>
+                        <li><a href="#proyek" class="hover:text-primary transition">Proyek Perumahan</a></li>
+                        <li><a href="#tentang" class="hover:text-primary transition">Tentang Developer</a></li>
+                        <li><a href="#simulasi-kpr" class="hover:text-primary transition">Simulasi KPR</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold text-sm mb-3">Legalitas & Partner</h5>
+                    <p class="leading-relaxed mb-2">Didukung oleh jaringan perbankan resmi:</p>
+                    <div class="inline-block bg-slate-900 border border-slate-800 px-3 py-1.5 rounded text-amber-400 font-bold text-[11px]">
+                        <i class="fa-solid fa-award mr-1"></i> Bank BTN Partner
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-between items-center text-slate-500">
+                <p>&copy; 2026 PT Kramat Jaya Cipta Perdana. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0">Jl. Rancamanyar - Bojongkoneng RT 04/12, Bandung</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hitung Simulasi KPR
+        function calculateKPR() {
+            const price = parseFloat(document.getElementById('propPrice').value) || 0;
+            const dpPercent = parseFloat(document.getElementById('dpPercent').value) || 0;
+            const years = parseFloat(document.getElementById('loanTenor').value) || 0;
+            const annualRate = parseFloat(document.getElementById('interestRate').value) || 0;
+
+            const dpAmount = price * (dpPercent / 100);
+            const loanAmount = price - dpAmount;
+            const months = years * 12;
+            const monthlyRate = (annualRate / 100) / 12;
+
+            let monthlyInstallment = 0;
+            if (monthlyRate > 0) {
+                monthlyInstallment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+            } else {
+                monthlyInstallment = loanAmount / months;
+            }
+
+            // Format Rupiah
+            const formatter = new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                maximumFractionDigits: 0
+            });
+
+            document.getElementById('monthlyInstallment').innerHTML = `${formatter.format(Math.round(monthlyInstallment))} <span class="text-xs font-normal text-slate-500">/bulan</span>`;
+            document.getElementById('loanAmountText').innerText = formatter.format(loanAmount);
+            document.getElementById('dpAmountText').innerText = formatter.format(dpAmount);
+        }
+
+        // Jalankan kalkulator pertama kali
+        calculateKPR();
+
+        // Auto-scroll Testimoni
+        const slider = document.getElementById('testimonial-slider');
+        let scrollAmount = 0;
+        let slideTimer = setInterval(() => {
+            if(slider) {
+                const maxScroll = slider.scrollWidth - slider.clientWidth;
+                scrollAmount += slider.clientWidth > 400 ? 432 : slider.clientWidth;
+                if(scrollAmount > maxScroll) {
+                    scrollAmount = 0;
+                }
+                slider.scrollTo({
+                    top: 0,
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }, 3500);
+
+        // Pause on hover
+        if(slider) {
+            slider.addEventListener('mouseenter', () => clearInterval(slideTimer));
+        }
+    </script>
+</body>
+</html>
